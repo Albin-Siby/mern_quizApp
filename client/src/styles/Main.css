@@ -1,0 +1,48 @@
+.container {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #cecece;
+    display: block;
+    position: relative;
+    margin: 40px auto;
+    height: auto;
+    width: 800px;
+}
+li{
+    margin-top: 20px;
+}
+.title{
+    color: white;
+    border: 3px solid green;
+    padding: 20px 0;
+    margin-bottom: 50px;
+}
+span{
+    margin: 0 200px;
+}
+.start{
+    display: flex;
+    justify-content: center;
+    padding-top: 2em;
+}
+.start .btn {
+    padding: .2em 1.7em;
+    border: none;
+    border-radius: .1em;
+    font-size: 1.2em;
+    color: #202020;
+    text-decoration: none;
+    background-color: #faff5a;
+}
+#form {
+    display: flex;
+    justify-content: center;
+    margin-top: 4em;
+}
+#form .userid{
+    padding: .7em 2em;
+    width: 30%;
+    border: none;
+    border-radius: 3px;
+    font-size: 1em;
+}
