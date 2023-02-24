@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/App.css'
 import Questions from './Questions'
 
+import { useSelector } from 'react-redux'
+
 function Quiz() {
+
+    const state = useSelector(state => state)
+
+    useEffect(() => {
+        //console.log(state)
+    })
 
     function onPrevHandle() {
         console.log("Prev btn is clicked")
