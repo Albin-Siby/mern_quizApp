@@ -1,0 +1,123 @@
+/* .flex-center{
+    display: flex;
+    justify-content: center;    
+    flex-direction: column;
+    border: 1px solid #cecece;
+    padding: 2em 3em; 
+    gap: 1em; 
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+.head{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+} */
+/* .bold{
+    margin-left: 500px;
+} */
+
+/* .container .flex{
+    display: flex; 
+    justify-content: space-between;
+    
+} */
+
+/* .container .flex span {
+    font-size: 1em;
+    color: #cecece;
+} */
+
+/* .container .flex span.achive {
+    font-weight: bold;
+    color: #ff2a66;
+    color: #2aff95;
+}
+
+table {
+    width: 100%;
+}
+
+.table-header {
+    color: #cecece;
+    font-size: 1.1em;
+    text-align: center;
+    background: #212121;
+    padding: 18px 0;
+}
+
+.table-body {
+    font-size: 1.1em;
+    text-align: center;
+    background: #d8d8d8;
+    padding: 18px 0;
+}
+
+.table-header > tr > td{
+    border: 1px solid #faff5a;   
+} */
+
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #cecece;
+    height: 450px;
+  }
+
+  .flex{
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .head {
+    text-align: left;
+    margin: 50px;
+  }
+  
+  .bold {
+    align-items: flex-end;
+    text-align: right;
+    margin-left: 250px;
+    color: yellow;
+  }
+  
+  .start .btn {
+    padding: .2em 1.7em;
+    border: none;
+    border-radius: .1em;
+    font-size: 1.2em;
+    color: #202020;
+    text-decoration: none;
+    background-color: #faff5a;
+    margin-bottom: 20px;
+}
+.btn:hover {
+    background-color: white;
+}
+table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.table-header {
+    color: #cecece;
+    font-size: 1.1em;
+    text-align: center;
+    background: #212121;
+    padding: 18px 0;
+}
+
+.table-body {
+    font-size: 0.9em;
+    text-align: center;
+    background: #d8d8d8;
+    padding: 18px 0;
+    color: #202020;
+}
+
+.table-header > tr > td{
+    border: 1px solid #faff5a;   
+}

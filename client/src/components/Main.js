@@ -8,7 +8,7 @@ function Main() {
 
   return (
     <div className='container'>
-        <h1 className="title text-light"><span>Quiz Application</span></h1>
+        <h1 className="title"><span>Quiz Application</span></h1>
 
             <ol>
                 <li>You will be asked 10 questions one after another.</li>

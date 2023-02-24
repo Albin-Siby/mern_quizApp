@@ -1,5 +1,6 @@
 import React from 'react'
-import '../styles/Quiz.css'
+import '../styles/App.css'
+import Questions from './Questions'
 
 function Quiz() {
 
@@ -13,7 +14,9 @@ function Quiz() {
 
   return (
     <div className="container">
-        <h1 className="title text-light"><span>Quiz Application</span></h1>
+        <h1 className="title"><span>Quiz Application</span></h1>
+
+        <Questions />
 
         <div className="grid">
             <button className='btn prev' onClick={onPrevHandle}>Prev</button>
