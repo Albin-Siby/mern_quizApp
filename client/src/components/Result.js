@@ -36,7 +36,7 @@ function Result() {
         <div className="flex">
           <span className='head'>Username</span>
           <div className="bold">
-            <span>Albin Siby</span>
+            <span>{userId}</span>
           </div>
         </div>
         <div className="flex">
