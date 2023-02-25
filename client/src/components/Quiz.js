@@ -15,9 +15,9 @@ function Quiz() {
     const { queue, trace } = useSelector(state => state.questions)
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        console.log(state.result.result)
-    })
+    // useEffect(() => {
+    //     console.log(state.result.result)
+    // })
 
     function onPrevHandle() {
         //console.log("Prev btn is clicked")
@@ -29,7 +29,7 @@ function Quiz() {
 
     function onNextHandle() {
         //console.log("Next btn is clicked")
-        if(trace < queue.length - 1) {
+        if(trace < queue.length) {
 
             dispatch(moveNextQuestion())
 
@@ -38,6 +38,8 @@ function Quiz() {
             }
 
         }
+
+        setCheck(undefined)
        
     }
 
@@ -46,7 +48,7 @@ function Quiz() {
         setCheck(check)
     }
 
-    if(result.length && result.length >= queue.length - 1) {
+    if(result.length && result.length >= queue.length) {
         return <Navigate to={'/results'} replace="true" ></Navigate>
     }
 
