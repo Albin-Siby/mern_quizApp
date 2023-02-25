@@ -1,12 +1,14 @@
 import React, { useEffect } from 'react'
 import '../styles/App.css'
 import Questions from './Questions'
+import { moveNextQuestion } from '../hooks/FetchQuestion'
 
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 function Quiz() {
 
     const state = useSelector(state => state)
+    const dispatch = useDispatch()
 
     useEffect(() => {
         //console.log(state)
@@ -17,7 +19,8 @@ function Quiz() {
     }
 
     function onNextHandle() {
-        console.log("Next btn is clicked")
+        //console.log("Next btn is clicked")
+        dispatch(moveNextQuestion())
     }
 
   return (
