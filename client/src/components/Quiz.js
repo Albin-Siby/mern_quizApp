@@ -5,16 +5,18 @@ import { moveNextQuestion, movePrevQuestion } from '../hooks/FetchQuestion'
 import { pushAnswer } from '../hooks/setResult'
 
 import { useSelector, useDispatch } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 
 function Quiz() {
 
     const [ check , setCheck ] = useState(undefined)
+    const result = useSelector(state => state.result.result)
     const state = useSelector(state => state)
     const { queue, trace } = useSelector(state => state.questions)
     const dispatch = useDispatch()
 
     useEffect(() => {
-        console.log(state)
+        console.log(state.result.result)
     })
 
     function onPrevHandle() {
@@ -31,7 +33,9 @@ function Quiz() {
 
             dispatch(moveNextQuestion())
 
-            dispatch(pushAnswer(check))
+            if(result.length <= trace) {
+                dispatch(pushAnswer(check))
+            }
 
         }
        
@@ -42,6 +46,10 @@ function Quiz() {
         setCheck(check)
     }
 
+    if(result.length && result.length >= queue.length - 1) {
+        return <Navigate to={'/results'} replace="true" ></Navigate>
+    }
+
   return (
     <div className="container">
         <h1 className="title"><span>Quiz Application</span></h1>
@@ -49,7 +57,7 @@ function Quiz() {
         <Questions onChecked = {onChecked} />
 
         <div className="grid">
-            <button className='btn prev' onClick={onPrevHandle}>Prev</button>
+            {trace > 0 ? <button className='btn prev' onClick={onPrevHandle}>Prev</button> : <></>}
             <button className='btn next' onClick={onNextHandle}>Next</button>
         </div>
     </div>

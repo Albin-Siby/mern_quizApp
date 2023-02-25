@@ -2,8 +2,20 @@ import React from 'react'
 import '../styles/Results.css'
 import { Link } from 'react-router-dom'
 import Resulttable from './Resulttable'
+import { useDispatch } from 'react-redux'
+
+import { resetResultAction } from '../redux/result_reducer'
+import { resetAllActions } from '../redux/question_reducer'
 
 function Result() {
+
+  const dispatch = useDispatch()
+
+  function onRestart() {
+    dispatch(resetAllActions())
+    dispatch(resetResultAction())
+  }
+
   return (
     <div className='container'>
       <h1 className="title"><span>Quiz Application</span></h1>
@@ -48,7 +60,7 @@ function Result() {
       </div>
 
       <div className="start">
-        <Link className='btn' to={'/'}>Restart</Link>
+        <Link className='btn' to={'/'} onClick={onRestart} >Restart</Link>
       </div>
 
       <div className="container">
