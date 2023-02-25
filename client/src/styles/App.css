@@ -27,6 +27,7 @@ span{
 }
 .grid {
     display: flex;
+    margin-top: 50px;
 }
 .btn {
     padding: .2em 1.7em;
@@ -112,7 +113,7 @@ ul li .check::before{
 input[type=radio]:checked ~ .check::before{
     background: green;
 }
-input[type=radio]:checked ~ .text-promary{
+input[type=radio]:checked ~ .text-primary{
     color: green;
 }
 .checked{

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 /* custom hook */
 import { useFetchQuestion } from '../hooks/FetchQuestion'
 
-function Questions() {
+function Questions( { onChecked }) {
 
     const [ checked, setChecked ] = useState(undefined)
     const [{ isLoading, apiData, serverError }] = useFetchQuestion()
@@ -13,12 +13,12 @@ function Questions() {
     const questions = useSelector(state => state.questions.queue[state.questions.trace])
 
     useEffect(() => {
-        console.log(questions)
+        //console.log(questions)
     })
 
-    function onselect() {
-        
-        console.log("radio button changed")
+    function onselect(i) {
+        //console.log(i)
+        onChecked(i)
     }
 
     if(isLoading) return <h3 className='text-light'>isLoading</h3>
@@ -30,7 +30,9 @@ function Questions() {
         <ul key={questions?.id}>
             {questions?.options.map((option, index) => (
                 <li key={index}>
-                    <input type="radio" id={`q${index}-option`} value={true} name="options" onChange={onselect()} />
+                    <input type="radio" id={`q${index}-option`} value={true} name="options" onChange={ () => {
+                        onselect(index)
+                    }} />
                     <label className='text-primary' htmlFor={`q${index}-option`}>{option}</label>
                     <div className="check"></div>
                 </li>

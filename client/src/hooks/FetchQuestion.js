@@ -40,3 +40,11 @@ export const moveNextQuestion = () => async(dispatch) => {
         console.log(error)
     }
 }
+
+export const movePrevQuestion = () => async(dispatch) => {
+    try {
+        dispatch(Action.movePrevAction())
+    } catch (error) {
+        console.log(error)
+    }
+}
