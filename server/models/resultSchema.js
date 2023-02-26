@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose()
+const { Schema } = mongoose
 
 const resultModel = new Schema({
     username : { type: String },
@@ -10,4 +10,4 @@ const resultModel = new Schema({
     createdAt : { type: Date, default: Date.now}
 });
 
-export default mongoose.model('Result', resultModel)
+module.exports = mongoose.model('Result', resultModel)

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose()
+const { Schema } = mongoose
 
 const questionModel = new Schema({
     questions : { type: Array, default: []},
@@ -7,4 +7,4 @@ const questionModel = new Schema({
     createdAt : { type: Date, default: Date.now}
 });
 
-export default mongoose.model('Questions', questionModel)
+module.exports = mongoose.model('Questions', questionModel)

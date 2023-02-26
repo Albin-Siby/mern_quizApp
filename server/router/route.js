@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-const { getQuestions, insertQuestions, deleteQuestions, getResults, insertResult, deleteResult } = require('../controllers/controller')
+const { getQuestions, insertQuestions, deleteQuestions, getResults, storeResult, deleteResult } = require('../controllers/controller')
 
 router.get('/questions', getQuestions)
 
@@ -10,7 +10,7 @@ router.delete('/questions', deleteQuestions)
 
 router.get('/results', getResults)
 
-router.post('/results', insertResult)
+router.post('/results', storeResult)
 
 router.delete('/results', deleteResult)
 

@@ -1,24 +1,63 @@
+const Questions = require('../models/questionSchema')
+const Results = require('../models/resultSchema')
+const { question, answers } = require('../database/data')
+
 
 module.exports.getQuestions = async(req,res) => {
-    res.json("question api get request")
+   try {
+        const q = await Questions.find();
+        res.json(q)
+   } catch (error) {
+        res.json({ error })
+   }
 }
 
 module.exports.insertQuestions = async(req,res) => {
-    res.json("question api post request")
+    try {
+        Questions.insertMany({ questions : question, answers : answers }, function(err,data) {
+            res.json({ msg: "Data inserted successfully..."})
+        })
+    } catch (error) {
+        res.json({ error })
+    }
 }
 
 module.exports.deleteQuestions = async(req,res) => {
-    res.json('question api delete request')
+    try {
+        await Questions.deleteMany()
+        res.json({ msg : "Data deleted successfully..."})
+    } catch (error) {
+        res.json({ error })
+    }
 }
 
 module.exports.getResults = async(req,res) => {
-    res.json("result api get request")
+    try {
+        const r = await Results.find();
+        res.json(r)
+    } catch (error) {
+        res.json({ error })
+    }
 }
 
-module.exports.insertResult = async(req,res) => {
-    res.json("result api post request")
+module.exports.storeResult = async(req,res) => {
+    try {
+        const { username, result, attempts, points, flag } = req.body;
+        if(!username && !result) throw new Error('Data not provided...')
+
+        Results.create({ username, result, attempts, points, flag }, function(err,data) {
+            res.json({ msg : "Result stored successfully..."})
+        })
+    } catch (error) {
+        res.json({ error })
+    }
 }
 
 module.exports.deleteResult = async(req,res) => {
-    res.json("result api delete request")
+    try {
+        await Results.deleteMany();
+        res.json({ msg : "Result deleted successfully..."})
+    } catch (error) {
+        res.json({ error })
+    }
 }
