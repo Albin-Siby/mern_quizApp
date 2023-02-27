@@ -15,10 +15,6 @@ function Quiz() {
     const { queue, trace } = useSelector(state => state.questions)
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     console.log(state.result.result)
-    // })
-
     function onPrevHandle() {
         //console.log("Prev btn is clicked")
         if(trace > 0) {
